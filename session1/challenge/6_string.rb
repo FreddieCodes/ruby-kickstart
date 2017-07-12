@@ -8,4 +8,14 @@
 # odds_and_evens("abcdefg",false)   # => "aceg"
 
 def odds_and_evens(string, return_odds)
+  to_return = ""
+  # .size is the same as .length
+  string.size.times do |index|
+    # next if allows you to skip a loop if the boolean is true
+    next if return_odds && index.even?
+    next if !return_odds && index.odd?
+    to_return << string[index]
+  end
+  to_return
 end
+
