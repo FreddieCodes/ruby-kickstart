@@ -14,9 +14,9 @@ def pirates_say_arrrrrrrrr(string)
     string.length.times do |index|
         # sets current_char variable to string[index]
         current_char = string[index]
-        # << = concatenate. concatenate to the to_return variable if current char = true
+        # << = concatenate. concatenate to the to_return variable if add_next = true
         to_return << current_char if add_next
-        # add_next = boolean 
+        # add_next = boolean . Only true when == r or R
         add_next = (current_char == "r" || current_char == "R")
     end
     # calls variable
