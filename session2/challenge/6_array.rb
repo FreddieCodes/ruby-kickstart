@@ -14,3 +14,16 @@
 # prime_chars? ['ab', 'cd']       # => false
 # prime_chars? ['a', 'bcd']       # => false
 # prime_chars? ['a', 'b', 'cd']   # => false
+
+def prime_chars?(letters)
+    string_length =  letters.join.length
+    prime_check = Math.sqrt(string_length)
+    return false if string_length < 2
+    (2..prime_check.to_i).each { |n| return false if string_length % n == 0 }
+    true   
+end
+
+# tests
+p prime_chars? ["abc"]
+p prime_chars? ["a"]
+p prime_chars? ["a" , "b", "cd"]
