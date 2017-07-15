@@ -1,3 +1,4 @@
+
 # Prompt the user for a number, then read it in and print out "hi" that many times
 # 
 # Repeat this process until the user submits "bye", then say "goodbye" and end the program
@@ -19,10 +20,25 @@
 # and when you think it is correct, you can test it with  $ rake 2:2
 
 def hi_hi_goodbye
-  # your code here
+ puts "Enter a number"
+ while number = gets.chomp
+ puts "hi " * number.to_i
+ break if number == "bye"
+ end
+ puts "goodbye"
 end
 
+## Same program but using until instead of while ##
 
+# def hi_hi_goodbye
+#    puts "Enter a number"
+#    until (number = gets.chomp) == "bye"
+#    puts "hi " * number.to_i
+#    end
+# puts "goodbye"
+# end
+
+###############
 
 
 # This will just invoke the method if you run this program directly
