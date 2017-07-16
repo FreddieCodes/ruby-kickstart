@@ -8,3 +8,15 @@
 # alternate_words("Lorem ipsum dolor sit amet.")  # => ["Lorem", "dolor", "amet"]
 # alternate_words("Can't we all get along?")      # => ["Can't", "all", "along"]
 # alternate_words("Elementary, my dear Watson!")  # => ["Elementary", "dear"]
+
+def alternate_words(strings)
+    to_return = []
+    array = strings.gsub(/[\?\.\!\,\:\;\-\"\)\(]/," ").split()
+    # going to use with_index and index.even?
+    array.each_with_index { |n, index| to_return << n if index.even?}
+    to_return
+end
+
+
+# test 
+p alternate_words("Hello a I'm what great!")
