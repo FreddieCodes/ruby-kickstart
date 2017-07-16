@@ -16,4 +16,16 @@
 #
 
 class Person
+    attr_accessor "name", "age" 
+    
+    def initialize(name, age)
+        @name = name
+        @age = age
+    end
+    
+    def birthday
+        # everytime the birthday method is called on an object of this class add an extra year (1) to their @age.
+        @age += 1
+    end
 end
+
