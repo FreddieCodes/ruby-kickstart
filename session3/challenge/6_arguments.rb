@@ -17,3 +17,23 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(oppo, *elements)
+    to_return = []
+    elements.each_slice(2) do |x, y|
+        x = !!x
+        y = !!y
+    result = if oppo
+        x != y
+      else
+        x == y
+      end
+    to_return << result
+    end 
+    to_return
+end
+
+# Test
+
+p match_maker(false, true,  true)               # => [true]
+p match_maker(true,  true,  true)               # => [false]
+p match_maker(true,  false, false)              # => [false]
