@@ -46,3 +46,6 @@ def shared(a, b)
   return union, result.sort
 end
 
+# Test
+
+p shared [1,2,3], [1,2,4]  

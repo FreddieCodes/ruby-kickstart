@@ -30,5 +30,10 @@
 # end
 
 
-def array_init
+def array_init(para=5, &block)
+   block ||= Proc.new { |i| (100 * i).to_s }
+   Array.new(para, &block)
 end
+
+p array_init                      # => ['0', '100', '200', '300', '400']
+p array_init { 'hi' }             # => ['hi', 'hi', 'hi', 'hi', 'hi']
